@@ -1,0 +1,87 @@
+:root {
+    /*Primary*/
+    --dark-cyan: hsl(185, 75%, 39%);
+    --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+    --dark-grayish-blue: hsl(227, 10%, 46%);
+    /*Neutral*/
+    --dark-gray: hsl(0, 0%, 59%);
+}
+
+@font-face {
+    font-family: 'Kumbh_Sans';
+    src: url(./fomts/Kumbh_Sans/KumbhSans-VariableFont_YOPQ\,wght.ttf);
+}
+
+body {
+    display: grid;
+    margin: 0;
+    font-family: 'Kumbh_Sans';
+    background-color: var(--dark-cyan);
+    min-height: 100svh;
+    width: 100svw;
+    container: body / inline-size;
+    position: relative;
+    overflow: hidden;
+}
+
+svg[id="bg-top"] {
+    position: absolute;
+    top: -60svh;
+    right: 30svw;
+    width: 100%;
+    height: 100%;
+}
+
+svg[id="bg-bottom"] {
+    position: absolute;
+    bottom: -60svh;
+    left: 30svw;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    height: 100svh;
+    width: 100svw;
+    z-index: 1;
+}
+
+div[class="attribution"] {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+
+@container(inline-size > 1440px) {
+    svg[id="bg-top"] {
+        position: absolute;
+        top: -50svh;
+        right: 25svw;
+    }
+
+    svg[id="bg-bottom"] {
+        position: absolute;
+        bottom: -50svh;
+        left: 25svw;
+    }
+}
+
+
+@container(inline-size < 1000px) {
+    svg[id="bg-top"] {
+        position: absolute;
+        width: 200%;
+        height: 120%;
+    }
+
+    svg[id="bg-bottom"] {
+        position: absolute;
+        width: 200%;
+        height: 120%;
+    }
+}
